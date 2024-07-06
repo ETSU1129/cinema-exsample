@@ -4,6 +4,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import gsap from 'gsap'
+import * as dat from 'lil-gui'
 // /**
 //  * Spector JS
 //  */
@@ -15,7 +16,7 @@ import gsap from 'gsap'
  * Base
  */
 // Debug
-const gui = new GUI({
+const gui = new dat.GUI({
     width: 400
 })
 
@@ -120,13 +121,21 @@ window.addEventListener('resize', () =>
  */
 // Base camera
 const camera = new THREE.PerspectiveCamera(45, sizes.width / sizes.height, 0.1, 100)
-camera.position.x = 100
-camera.position.y = 2
-camera.position.z = 4
+camera.position.x = 23
+camera.position.y = 15
+camera.position.z = -14
 scene.add(camera)
+gui.add(camera.position, 'x').min(-50).max(50).step(0.01).name('cameraX')
+const cameraposition ={
+    x: 23,
+    y: 15,
+    z: -14
+
+}
 
 // Controls
 const controls = new OrbitControls(camera, canvas)
+controls.target.set(5, 10, 0)
 controls.enableDamping = true
 
 /**
@@ -150,7 +159,6 @@ const tick = () =>
 
     // Update controls
     controls.update()
-
     // Render
     renderer.render(scene, camera)
 
@@ -165,15 +173,59 @@ function introAnimation() {
 
     gsap.to(camera.position, { // カメラの位置から
         duration: 6.5, // アニメーションにかかる時間A
-        delay: 1, // 遅延
-        x:100, // 目指すx位置
-        y: 50, // 目指すy位置
-        z: -0.1, // 目指すz位置
+        delay: 0.5, // 遅延
+        x:-3, // 目指すx位置
+        y: 16, // 目指すy位置q
+        z: -16, // 目指すz位置
         ease: "power4.inOut", // イージングを定義
         onComplete: function () { // アニメーション終了時
                                     controls.enabled = true // オービットコントロールを有効にする
                                     // setOrbitControlsLimits() // コントロール制限を設定
         }
     })
+    gsap.to(controls.target,
+        {
+            duration: 3.5,
+            delay: 0.5,
+            x: 5,
+            y: 10,
+            z: 0,
+            ease: "power4.inOut"
+        }
+    )
 }
 introAnimation()
+
+const pokemon = document.getElementById('seat1')
+
+function diveintoAnimation() {
+    controls.enabled = false // カメラをアニメーションするためにオービットコントロールを無効にする
+
+    gsap.to(camera.position, { // カメラの位置から
+        duration: 6.5, // アニメーションにかかる時間A
+        delay: 0.5, // 遅延
+        x:20, // 目指すx位置
+        y: 10, // 目指すy位置q
+        z: 31, // 目指すz位置
+        ease: "power4.inOut", // イージングを定義
+        onComplete: function () { // アニメーション終了時
+                                    controls.enabled = true // オービットコントロールを有効にする
+                                    // setOrbitControlsLimits() // コントロール制限を設定
+        }
+    })
+    gsap.to(controls.target,
+        {
+            duration: 3.5,
+            delay: 0.5,
+            x: 8,
+            y: 5,
+            z: -1,
+            ease: "power4.inOut"
+        }
+    )
+}
+document.getElementById('diveinto').addEventListener('click', diveintoAnimation)
+console.log(diveinto)
+console.log(introAnimation)
+console.log(camera.position)
+console.log(controls.target)
