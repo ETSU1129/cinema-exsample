@@ -210,6 +210,10 @@ function diveintoAnimation() {
         ease: "power4.inOut", // イージングを定義
         onComplete: function () { // アニメーション終了時
                                     controls.enabled = true // オービットコントロールを有効にする
+                                    // contentを非表示にして、chartを表示する
+                                    document.getElementById('content').style.display = 'none';
+
+                                    document.getElementById('chart').style.display = 'flex';
                                     // setOrbitControlsLimits() // コントロール制限を設定
         }
     })
@@ -229,3 +233,31 @@ console.log(diveinto)
 console.log(introAnimation)
 console.log(camera.position)
 console.log(controls.target)
+
+document.getElementById('A1').addEventListener('click', () => {  // シート1をクリックしたら
+    console.log('A1');
+    document.getElementById('chart').style.display ='none'
+    
+    gsap.to(camera.position, { // カメラの位置から
+        duration: 2.5, // アニメーションにかかる時間
+        delay: 0.5, // 遅延
+        x: 22, // 目指すx位置
+        y: 3, // 目指すy位置
+        z: 11, // 目指すz位置
+        ease: "power4.inOut", // イージングを定義
+        onComplete: function () { // アニメーション終了時
+            controls.enabled = true; // オービットコントロールを有効にする
+            setOrbitControlsLimits(); // コントロール制限を設定（コメントアウトを解除）
+        }
+    });
+    gsap.to(controls.target,
+        {
+            duration: 2.5,
+            delay: 0.5,
+            x: 9,
+            y: 9,
+            z: 50,
+            ease: "power4.inOut"
+        }
+    )
+});

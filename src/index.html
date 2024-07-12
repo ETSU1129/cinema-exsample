@@ -8,7 +8,7 @@
 </head>
 <body>
     <canvas class="webgl"></canvas>
-    <div class="container">
+    <div id='content'  class="content">
         <header>
                 <h1>CinemaView</h1>
             <div class="toggle"></div>
@@ -23,18 +23,86 @@
                 
                 <a id="diveinto" href="#">dive Into</a>
             </div>
-            <footer>
-                <p>&copy; 2024 CinemaView. All Rights Reserved</p>
-            </footer>
     </div>
-    <div class="menu">
-        <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="#">about</a></li>
-            <li><a href="#">content</a></li>
-            <li><a href="#">tiket</a></li>
-        </ul>
-    </div>
+
+<!-- 座席表を表す要素の追加 -->
+<div id="chart" class='chart' style="display:none;">
+    <!-- 座席表の内容 -->
+        <div class="screen">スクリーン</div>
+        <div class="seating-chart">
+            <div id="A1" class="seat">A1</div>
+            <div id="A2" class="seat">A2</div>
+            <div id="A3" class="seat">A3</div>
+            <div id="A4" class="seat">A4</div>
+            <div id="A5" class="seat">A5</div>
+            <div id="A6" class="seat">A6</div>
+            <div id="A7" class="seat">A7</div>
+            <div id="A8" class="seat">A8</div>
+            <div id="A9" class="seat">A9</div>
+            <div id="A10" class="seat">A10</div>
+            <div id="A11" class="seat">A11</div>
+    
+            <div id="B1" class="seat">B1</div>
+            <div id="B2" class="seat">B2</div>
+            <div id="B3" class="seat">B3</div>
+            <div id="B4" class="seat">B4</div>
+            <div id="B5" class="seat">B5</div>
+            <div id="B6" class="seat">B6</div>
+            <div id="B7" class="seat">B7</div>
+            <div id="B8" class="seat">B8</div>
+            <div id="B9" class="seat">B9</div>
+            <div id="B10" class="seat">B10</div>
+            <div id="B11" class="seat">B11</div>
+    
+            <div id="C1" class="seat">C1</div>
+            <div id="C2" class="seat">C2</div>
+            <div id="C3" class="seat">C3</div>
+            <div id="C4" class="seat">C4</div>
+            <div id="C5" class="seat">C5</div>
+            <div id="C6" class="seat">C6</div>
+            <div id="C7" class="seat">C7</div>
+            <div id="C8" class="seat">C8</div>
+            <div id="C9" class="seat">C9</div>
+            <div id="C10" class="seat">C10</div>
+            <div id="C11" class="seat">C11</div>
+    
+            <div id="D1" class="seat">D1</div>
+            <div id="D2" class="seat">D2</div>
+            <div id="D3" class="seat">D3</div>
+            <div id="D4" class="seat">D4</div>
+            <div id="D5" class="seat">D5</div>
+            <div id="D6" class="seat">D6</div>
+            <div id="D7" class="seat">D7</div>
+            <div id="D8" class="seat">D8</div>
+            <div id="D9" class="seat">D9</div>
+            <div id="D10" class="seat">D10</div>
+            <div id="D11" class="seat">D11</div>
+    
+            <div id="E1" class="seat">E1</div>
+            <div id="E2" class="seat">E2</div>
+            <div id="E3" class="seat">E3</div>
+            <div id="E4" class="seat">E4</div>
+            <div id="E5" class="seat">E5</div>
+            <div id="E6" class="seat">E6</div>
+            <div id="E7" class="seat">E7</div>
+            <div id="E8" class="seat">E8</div>
+            <div id="E9" class="seat">E9</div>
+            <div id="E10" class="seat">E10</div>
+            <div id="E11" class="seat">E11</div>
+    
+            <div id="F1" class="seat">F1</div>
+            <div id="F2" class="seat">F2</div>
+            <div id="F3" class="seat">F3</div>
+            <div id="F4" class="seat">F4</div>
+            <div id="F5" class="seat">F5</div>
+            <div id="F6" class="seat">F6</div>
+            <div id="F7" class="seat">F7</div>
+            <div id="F8" class="seat">F8</div>
+            <div id="F9" class="seat">F9</div>
+            <div id="F10" class="seat">F10</div>
+            <div id="F11" class="seat">F11</div>
+        </div>
+</div>
     <script type="module" src="./script.js"></script>
 </body>
 </html>
