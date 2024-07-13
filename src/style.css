@@ -128,13 +128,13 @@ footer{
     left: 0; /* 左端からの位置 */
     width: 100%; /* 幅を画面全体に */
     height: 100%; /* 高さを画面全体に */
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明の背景色 */
+    /* background-color: rgba(0, 0, 0, 0.5); 半透明の背景色 */
     z-index: 1000; /* 他の要素より上に表示 */
     justify-content: center; /* 中央揃え */
     align-items: center; /* 中央揃え */
     display: flex; /* Flexboxを使用して中身を中央に */
     flex-direction: column;
-    font-family: Arial, , Helvetica, sans-serif;
+    font-family: Arial,  Helvetica, sans-serif;
 }
 
 .screen {
@@ -162,9 +162,6 @@ footer{
     flex-direction: column;
     align-items: center;
 }
-.seat{
-    opacity: 0.7;
-}
 
 .seat {
     width: 30px;
@@ -175,8 +172,68 @@ footer{
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    opacity: 0.7;
 }
 
 .seat:hover {
     background-color: #999;
+}
+
+.selected--chair--component.show {
+    transform: translateX(0%);
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+.selected--chair--component {
+    position: absolute;
+    right: 10%;
+    bottom: 10%;
+    padding: 40px 50px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background: #ffffff29;
+    transform: translateX(120%);
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    transition: all 0.8s ease-out;
+    display: none;
+}
+
+
+.arrow {
+width: 10px; /* ボックスの横幅を指定する */
+height: 10px; /* ボックスの高さを指定する */
+border-top: 2px solid #666666; /* 境界線の上部を実線に指定する*/
+border-right: 2px solid #666666; /* 境界線の上部を実線に指定する*/
+transform: rotate(225deg); /* ボックスを回転させる（右向き矢印） */
+position:absolute;
+left: 5%;
+top: 10%;
+z-index: 1111;
+display: none;
+}
+
+.main--content {
+    position: absolute;
+    /* z-index: 10; */
+    color: rgba(255, 255, 255, 0.4);
+    bottom: 5%;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    pointer-events: none;
+    font-size: 13px;
+}
+
+.back{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    cursor: pointer;
+    color: white;
+    font-size: 20px;
+    display: block;
 }
