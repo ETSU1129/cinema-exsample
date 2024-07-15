@@ -170,6 +170,8 @@ tick()
 
 function introAnimation() {
     controls.enabled = false // カメラをアニメーションするためにオービットコントロールを無効にする
+
+    document.getElementById('diveinto').addEventListener('click', diveintoAnimation)
     gsap.to(camera.position, { // カメラの位置から
         duration: 6.5, // アニメーションにかかる時間A
         delay: 0.5, // 遅延
@@ -197,14 +199,13 @@ introAnimation()
 
 const pokemon = document.getElementById('seat1')
 
+document.getElementById('topcontent').addEventListener('click', introAnimation)
+
+
 function diveintoAnimation() {
     controls.enabled = false // カメラをアニメーションするためにオービットコントロールを無効にする
-    
-    const arrow = document.getElementById('arrow')
-    
 
-   
-
+    document.getElementById('selected--chair--component show').style.display = 'none'
     gsap.to(camera.position, { // カメラの位置から
         duration: 4, // アニメーションにかかる時間A
         x:20, // 目指すx位置
@@ -214,7 +215,7 @@ function diveintoAnimation() {
         onComplete: function () { // アニメーション終了時
                                     controls.enabled = true // オービットコントロールを有効にする
                                     // contentを非表示にして、chartを表示する
-                                    document.getElementById('content').style.display = 'none';
+                                    document.getElementById('text').style.display = 'none';
 
                                     document.getElementById('chart').style.display = 'flex';
                                     // setOrbitControlsLimits() // コントロール制限を設定
@@ -231,13 +232,14 @@ function diveintoAnimation() {
             ease: "power4.inOut"
         }
     )
+    
 }
-document.getElementById('diveinto').addEventListener('click', diveintoAnimation)
 console.log(diveinto)
 console.log(introAnimation)
 console.log(camera.position)
 console.log(controls.target)
 
+document.getElementById('diveinto').addEventListener('click', diveintoAnimation)
 
 const seatData ={
         'A1':{
@@ -510,16 +512,14 @@ const seatData ={
 
 
 
-    document.getElementById('arrow').addEventListener('click', diveintoAnimation)
+
+document.getElementById('arrow').addEventListener('click', diveintoAnimation)
+    
 // 座席がクリックされた時の処理
 function seatClick(seatId) {
     console.log(seatId)
     document.getElementById('chart').style.display = 'none'
     document.getElementById('selected--chair--component show').style.display = 'block'
-
-
-
-
     const data = seatData[seatId]
 
     gsap.to(camera.position, { // カメラの位置から

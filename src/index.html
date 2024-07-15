@@ -9,11 +9,11 @@
 <body>
     <canvas class="webgl"></canvas>
     <div id='content'  class="content">
-        <header>
-                <h1>CinemaView</h1>
+        <header id="header">
+                <h1 id="topcontent">CinemaView</h1>
             <div class="toggle"></div>
         </header>
-            <div class="text">
+            <div id="text" class="text">
                 <h2>Cinema <br>3D Viewer
                 </h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora suscipit <br> illo ex asperiores rem nam totam doloribus. 
@@ -30,9 +30,9 @@
         <h2 class="chair--name">SEAT A1</h2>
         <p class="chair--price">BasicSeat</p>
         <button class="button--add--cart" cursor-class="arrow">Add to cart</button>
+        <button id="arrow" class="arrow">戻りましょう</button>
     </div>
 
-    <div id="arrow" class="arrow"></div>
 
 <!-- 座席表を表す要素の追加 -->
 <div id="chart" class='chart' style="display:none;">

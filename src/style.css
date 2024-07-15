@@ -95,6 +95,9 @@ footer{
     margin-left: 10%;
 }
 
+#topcontent{
+    pointer-events: auto;
+}
 
 
 /* .showcace
@@ -136,6 +139,7 @@ footer{
     flex-direction: column;
     font-family: Arial,  Helvetica, sans-serif;
 }
+
 
 .screen {
     background-color: #333;
@@ -202,18 +206,6 @@ footer{
 }
 
 
-.arrow {
-width: 10px; /* ボックスの横幅を指定する */
-height: 10px; /* ボックスの高さを指定する */
-border-top: 2px solid #666666; /* 境界線の上部を実線に指定する*/
-border-right: 2px solid #666666; /* 境界線の上部を実線に指定する*/
-transform: rotate(225deg); /* ボックスを回転させる（右向き矢印） */
-position:absolute;
-left: 5%;
-top: 10%;
-z-index: 1111;
-display: none;
-}
 
 .main--content {
     position: absolute;
