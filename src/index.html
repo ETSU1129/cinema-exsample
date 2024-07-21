@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CinemaView</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CinemaView</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <canvas class="webgl"></canvas>
+    <div id="selected--chair--component-show" class="selected--chair--component-show">
+        <p>Selected seat</p>
+        <h2 class="chair--name">SEAT A1</h2>
+        <li class="seat-li">
+        <button  id="button--add--cart" class="button--add--cart">購入する</button>
+        <button id="arrow" class="arrow">戻る</button>
+        </li>
+    </div>
+    
+    <div id="about-content" class="about-content" >
+        <div id="about-content--text" class="about-content--text">
+        <div id="close" class="close">Close</div>
+        <h2>About</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur, labore sint amet doloribus non pariatur dolor iure omnis rem!</p>
+        <p>Lorem ipsum dolor sit amet. <a>Lorem, ipsum.</a></p>
+        </div>
+    </div>
     <div id='content'  class="content">
         <header id="header">
-                <h1 id="topcontent">CinemaView</h1>
-            <div class="toggle"></div>
+            <h1 id="topcontent">CinemaView</h1>
+            <nav id="nav" class="nav">
+                <ul>
+                    <li><a id="home" href="#">Home</a></li>
+                        <li><a id="about" href="#">About</a></li>
+                    </ul>
+                </nav>
         </header>
             <div id="text" class="text">
                 <h2>Cinema <br>3D Viewer
@@ -20,23 +42,15 @@
                     Ducimus quis doloribus iure <br>
                      voluptatem similique minus dolore pariatur tenetur eaque assumenda? Fuga te
                 </p>
-                
                 <a id="diveinto" href="#">dive Into</a>
             </div>
     </div>
-
-    <div id="selected--chair--component show" class="selected--chair--component show">
-        <p>Selected seat</p>
-        <h2 class="chair--name">SEAT A1</h2>
-        <p class="chair--price">BasicSeat</p>
-        <button class="button--add--cart" cursor-class="arrow">Add to cart</button>
-        <button id="arrow" class="arrow">戻りましょう</button>
-    </div>
-
-
-<!-- 座席表を表す要素の追加 -->
-<div id="chart" class='chart' style="display:none;">
-    <!-- 座席表の内容 -->
+    
+    
+    
+    <!-- 座席表を表す要素の追加 -->
+    <div id="chart" class='chart' >
+        <!-- 座席表の内容 -->
         <div class="screen">スクリーン</div>
         <div class="seating-chart">
             <div id="A1" class="seat">A1</div>
@@ -50,7 +64,7 @@
             <div id="A9" class="seat">A9</div>
             <div id="A10" class="seat">A10</div>
             <div id="A11" class="seat">A11</div>
-    
+            
             <div id="B1" class="seat">B1</div>
             <div id="B2" class="seat">B2</div>
             <div id="B3" class="seat">B3</div>
@@ -62,7 +76,7 @@
             <div id="B9" class="seat">B9</div>
             <div id="B10" class="seat">B10</div>
             <div id="B11" class="seat">B11</div>
-    
+            
             <div id="C1" class="seat">C1</div>
             <div id="C2" class="seat">C2</div>
             <div id="C3" class="seat">C3</div>
@@ -74,7 +88,7 @@
             <div id="C9" class="seat">C9</div>
             <div id="C10" class="seat">C10</div>
             <div id="C11" class="seat">C11</div>
-    
+            
             <div id="D1" class="seat">D1</div>
             <div id="D2" class="seat">D2</div>
             <div id="D3" class="seat">D3</div>
@@ -86,7 +100,7 @@
             <div id="D9" class="seat">D9</div>
             <div id="D10" class="seat">D10</div>
             <div id="D11" class="seat">D11</div>
-    
+            
             <div id="E1" class="seat">E1</div>
             <div id="E2" class="seat">E2</div>
             <div id="E3" class="seat">E3</div>
@@ -111,13 +125,13 @@
             <div id="F10" class="seat">F10</div>
             <div id="F11" class="seat">F11</div>
         </div>
-</div>
-<!-- 戻るボタン -->
+    </div>
+    <!-- 戻るボタン -->
 
-<div   id="seat-a1" class="main--content">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur, labore sint amet doloribus non pariatur dolor iure omnis rem!</p>
-    <p>Lorem ipsum dolor sit amet. <a>Lorem, ipsum.</a></p>
-</div>
+    <div   id="seat-a1" class="main--content">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A consectetur, labore sint amet doloribus non pariatur dolor iure omnis rem!</p>
+        <p>Lorem ipsum dolor sit amet. <a>Lorem, ipsum.</a></p>
+    </div>
     <script type="module" src="./script.js"></script>
 </body>
 </html>
